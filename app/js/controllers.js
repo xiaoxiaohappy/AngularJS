@@ -11,9 +11,9 @@ bookStoreCtrls.controller('HelloCtrl', ['$scope',
 bookStoreCtrls.controller('BookListCtrl', ['$scope',
     function($scope) {
         $scope.books =[
-        	{title:"《Ext江湖》",author:"大漠穷秋"},
-        	{title:"《ActionScript游戏设计基础（第二版）》",author:"大漠穷秋"},
-        	{title:"《用AngularJS开发下一代WEB应用》",author:"大漠穷秋"}
+        	{title:"《射雕英雄传》",author:"金庸"},
+        	{title:"《还珠格格》",author:"琼瑶"},
+        	{title:"《花非花，雾非雾》",author:"琼瑶"}
         ]
     }
 ]);

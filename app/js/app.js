@@ -3,6 +3,7 @@ var bookStoreApp = angular.module('bookStoreApp', [
     'bookStoreServices', 'bookStoreDirectives'
 ]);
 
+//路由
 bookStoreApp.config(function($routeProvider) {
     $routeProvider.when('/hello', {
         templateUrl: 'tpls/hello.html',

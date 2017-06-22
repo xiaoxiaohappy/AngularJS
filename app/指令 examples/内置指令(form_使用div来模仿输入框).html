@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="form_div">
+<head>
+    <meta charset="UTF-8">
+    <title>内置指令(form_使用div来模仿输入框)</title>
+
+    <script src="../public/angular-1.3.0.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap-3.0.0/css/bootstrap.css">
+    <script src="内置指令(form_使用div来模仿输入框).js"></script>
+
+
+
+    <style>
+        div[contenteditable]{
+            cursor: pointer;
+            background-color: #2aabd2;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div>
+        <div contenteditable="true" ng-model="content" title="点击后编辑">something</div>
+        <pre>输入={{content}}</pre>
+    </div>
+
+</body>
+
+</html>

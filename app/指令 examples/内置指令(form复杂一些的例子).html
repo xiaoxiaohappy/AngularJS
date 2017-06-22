@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>复杂一些的（邮箱验证、单选、重置）</title>
+    <script src="../public/angular-1.3.0.js"></script>
+    <script src="内置指令(form复杂一些的例子).js"></script>
+    <script src="scope的绑定(=).js"></script>
+</head>
+<body>
+  <div ng-controller="myCtrl">
+      <form name="form" class="css-form" novalidate>
+          姓名:
+          <input type="text" ng-model="user.name" name="uName" required/>
+
+
+          邮箱:
+          <input type="email" ng-model="user.email" name="uEmail" required/>
+          <!--接下来这个div是用来验证 刚刚这个邮箱的-->
+          <!--ng-show="这里跟着的是form.后写组件的name.。。。。。"-->
+          <div ng-show="form.uEmail.$dirty && form.uEmail.$invalid">
+              无效:
+              <span ng-show="form.uEmail.$error.email">这是一个无效的邮箱</span>
+
+              <!--当输入无效的邮箱之后，若未及时再输入邮箱，则会提示下面这句话-->
+              <span ng-show="form.uEmail.$error.required">请输入邮箱</span>
+          </div>
+
+
+          性别:
+          <input type="radio" ng-model="user.gender" value="男"/>男
+          <input type="radio" ng-model="user.gender" value="女"/>女 <br/>
+
+
+          <input type="checkbox" ng-model="user.agree" name="uAgree" required/>我同意:
+          <input ng-show="user.agree" type="text" ng-model="user.agreeSign" required/>
+          <!--如果未同意也未签名，则显示下面这个信息-->
+          <!--这里的ng-show中写的是控件的ng-model中的名字-->
+          <div ng-show="!user.agree || !user.agreeSign" >
+              请同意并签名
+          </div>
+
+
+
+
+          <button ng-click="reset()" ng-disabled="isUnchanged(user)">重置</button>
+          <button ng-click="update(user)" ng-disabled="form.$invalid || isUnchanged(user)">保存</button>
+
+
+
+          <!--当全部填写好之后，点击“保存”的button后，"重置"与"保存"按钮都会置灰，不可点击，所以可以保证不会重复提交-->
+      </form>
+  </div>
+
+</body>
+</html>

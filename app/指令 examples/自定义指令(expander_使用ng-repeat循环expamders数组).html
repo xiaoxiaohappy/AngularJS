@@ -1,5 +1,5 @@
-<!DOCTYPE html ng-app="myexpanders">
-<html lang="en">
+<!DOCTYPE html >
+<html lang="en" ng-app="myexpanders">
 <head>
     <meta charset="UTF-8">
     <title>自定义指令(expander_使用ng-repeat循环expamders数组)</title>
@@ -29,20 +29,13 @@
         }
     </style>
 </head>
-<body ng-controller="myCtrl">
-        <myManyExpander>
-            <expander class="myExpander" ng-repeat="expander in expanders" expander-title="expander.title">
-                {{expander.text}}
-            </expander>
-        </myManyExpander>
 
-
-
-
-
-
-
-
-
+<body ng-controller='myCtrl' >
+<!--accordion不可自己随意命名-->
+    <accordion>
+       <expander class='myExpander' ng-repeat='expander in expanders' expander-title='expander.title'>
+           {{expander.text}}
+       </expander>
+    </accordion>
 </body>
 </html>

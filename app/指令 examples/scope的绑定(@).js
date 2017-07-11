@@ -6,7 +6,7 @@ myModule.controller('MyCtrl', ['$scope', function($scope){
     $scope.ctrlFlavor="百威";
 }])
 
-//一般的方式  link
+//一般的方式  link ,link可以操作DOM元素（操作DOM元素在指令中，不要放在controller中）
 // myModule.directive("drink", function() {
 //     return {
 //         template:"<div>{{flavor}}</div>",
